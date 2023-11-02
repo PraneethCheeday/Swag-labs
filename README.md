@@ -1,5 +1,4 @@
-Requirement:
-
+## Commands
 Identified 5 testcases as per the requirement and this repo contains 5 tests and assertions were added to each test
 mocha-chrome
 ☕ Run Mocha tests using headless Google Chrome
