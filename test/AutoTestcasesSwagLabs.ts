@@ -27,12 +27,13 @@ describe("Selenium", () => {
     await element.sendKeys("standard_user", Key.RETURN);
 
     //entering password
-    const password = await driver.findElement(By.id("login-button"));
+    const password = await driver.findElement(By.id("password"));
     await element.sendKeys("secret_sauce", Key.RETURN);
 
     //login to website
-    const loginButton = await driver.findElement(By.id("password"));
-    await element.sendKeys("secret_sauce", Key.RETURN);
+    const loginButton = await driver.findElement(By.id("login-button"));
+    await loginButton.click();
+
 
     const res = await driver.findElement(By.id("shopping_cart_container"))
     assert.notEqual(shoppingCartIcon, null);
@@ -95,7 +96,7 @@ describe("Selenium", () => {
     // Check for a success message or confirmation element.
   const confirmationMessage = await driver.findElement(By.xpath("//div[contains(text(), 'Thank you for your order')]"));
 
-  // Assert that the confirmation message is present to confirm a successful checkout.
+  // checking confirmation message is present to confirm a successful checkout.
   assert.ok(confirmationMessage, "Checkout was not successful. Confirmation message not found.");
  });
 
